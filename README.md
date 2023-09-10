@@ -66,7 +66,7 @@ python WindowsDiskClonerInterface.py "SD Card" sdDisk.bin  # Windows
 ## Links
 
  - [Github](https://github.com/mauricelambert/DiskCloner)
- - [Linux executable](https://mauricelambert.github.io/info/python/security/WindowsFileCloner.exe)
+ - [Linux executable](https://mauricelambert.github.io/info/python/security/LinuxFileCloner)
  - [Linux Shared Object](https://mauricelambert.github.io/info/python/security/libFileCloner.so)
  - [Windows executable](https://mauricelambert.github.io/info/python/security/WindowsFileCloner.exe)
  - [Windows DLL](https://mauricelambert.github.io/info/python/security/libFileCloner.dll)

@@ -3,7 +3,7 @@
 
 ###################
 #    This file implements an interface for Linux FileCloner with Python
-#    Copyright (C) 2023  ElfAnalyzer
+#    Copyright (C) 2023  DiskCloner
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ This file implements an interface for Linux
 FileCloner with python to clone hard disk.
 """
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "Maurice Lambert"
 __author_email__ = "mauricelambert434@gmail.com"
 __maintainer__ = "Maurice Lambert"
@@ -52,7 +52,7 @@ print(copyright)
 from sys import stderr, exit, argv, executable
 from os.path import join, exists, dirname
 from subprocess import check_output
-from ctypes import c_char_p, cdll
+from ctypes import c_char, cdll
 from os import getcwd
 
 filename = "libFileCloner.so"
@@ -96,7 +96,7 @@ def main() -> int:
     if sourcefilepath in disks:
         sourcefilepath = join("/dev", sourcefilepath)
 
-    buffer = (c_char_p * bufferSize)(b"\0" * bufferSize)
+    buffer = (c_char * bufferSize)(b"\0")
 
     libfilecloner.clone_from_filename(
         sourcefilepath.encode(),
